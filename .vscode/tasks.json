@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: gcc.exe arquivo de build ativo",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
+			"args": [
+				"${workspaceFolder}\\src\\main.c",
+				"${workspaceFolder}\\src\\include\\@util.c",
+				"${workspaceFolder}\\src\\include\\@array.c",
+
+				"-o",
+				"${workspaceFolder}\\sort",
+				"-std=c99"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compilador: C:\\MinGW\\bin\\gcc.exe"
+		}
+	]
+}
