@@ -16,15 +16,20 @@ void ARRAY_Randomize(int *array, int size) {
     array[i] = UTIL_Rand(1, 20); // generating a random number for each item in the array
 }
 
+// function to sort only 1 step
+void ARRAY_SortNext(int *array, int size) {
+  for(int i = 1; i < size; i++) {
+    int n1IsGreaterThanN2 = array[i - 1] > array[i]; // if is n1 greater than n2 returns 1, else 0
+
+    if(n1IsGreaterThanN2)
+      UTIL_Swap(&array[i - 1], &array[i]); // swapping values
+  }
+}
+
 // function to sort array
 void ARRAY_Sort(int *array, int size) {
   for(int i = size; i > 0 ; i--) {
-    for(int j = 1; j < i; j++) {
-      int n1IsGreaterThanN2 = array[j - 1] > array[j]; // if is n1 greater than n2 returns 1, else 0
-
-      if(n1IsGreaterThanN2)
-        UTIL_Swap(&array[j - 1], &array[j]); // swapping values
-    }
+    ARRAY_SortNext(array, i);
   }
 }
 
