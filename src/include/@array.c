@@ -31,8 +31,8 @@ void ARRAY_Randomize(int *array, int size) {
 
 // function to sort array
 void ARRAY_Sort(int *array, int size) {
-  for(int i = 1; i < size; i++) {
-    for(int j = 1; j < size; j++) {
+  for(int i = size; i > 0 ; i--) {
+    for(int j = 1; j < i; j++) {
       int n1IsGreaterThanN2 = array[j - 1] > array[j]; // if is n1 greater than n2 returns 1, else 0
 
       if(n1IsGreaterThanN2)

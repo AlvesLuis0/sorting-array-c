@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "include/array.h"
@@ -16,6 +17,9 @@ int main(int argc, char **argv) {
 
   ARRAY_Randomize(array, size); // randomizing array
   ARRAY_Print(array, size); // print values in array
+
+  getchar();
+
   ARRAY_Sort(array, size); // sorting array
   ARRAY_Print(array, size); // printing array sorted
 
