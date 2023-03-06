@@ -13,7 +13,7 @@ void ARRAY_Randomize(int *array, int size) {
   UTIL_InitRand(); // applying a seed to random numbers
 
   for(int i = 0; i < size; i++)
-    array[i] = UTIL_Rand(1, RAND_MAX); // generating a random number for each item in the array
+    array[i] = UTIL_Rand(1, 20); // generating a random number for each item in the array
 }
 
 // function to sort array
