@@ -9,6 +9,7 @@
 				"${workspaceFolder}\\src\\main.c",
 				"${workspaceFolder}\\src\\include\\@util.c",
 				"${workspaceFolder}\\src\\include\\@array.c",
+				"${workspaceFolder}\\src\\include\\@render.c",
 
 				"-o",
 				"${workspaceFolder}\\sort",

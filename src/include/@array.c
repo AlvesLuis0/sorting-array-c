@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 #include "util.h"
@@ -7,18 +6,6 @@
 int* ARRAY_New(int size) {
   int *array = (int*) calloc(size, sizeof(int)); // allocating memory to the array
   return array;
-}
-
-// function to print values in array
-void ARRAY_Print(int *array, int size) {
-  printf("{");
-
-  for(int i = 0; i < size - 1; i++) {
-    printf(" %d,", array[i]); // printing each number in the array
-  }
-
-  printf(" %d", array[size - 1]);
-  printf(" };\n");
 }
 
 // function to randomize array
