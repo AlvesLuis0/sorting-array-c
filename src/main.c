@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 // function to sort array
 void SortArray(int *array, int size) {
   for(int i = size; i > 0 ; i--) {
-    Sleep(10000 / size);
+    Sleep(10000 / size); // waiting some seconds to pass to next frame
     ARRAY_SortNext(array, i); // sort array only 1 step
     RENDER_ShowArray(array, size);
     RENDER_PrintArray(array, size);
