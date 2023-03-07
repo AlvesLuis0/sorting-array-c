@@ -1,18 +1,21 @@
 #include <stdlib.h>
 
 #include "util.h"
+#include "array.h"
 
 // function to declare array
-int* ARRAY_New(int size) {
+int* ARRAY_New(int size, int maxValue) {
   int *array = (int*) calloc(size, sizeof(int)); // allocating memory to the array
+  arraySize = size;
+  arrayMaxValue = maxValue;
   return array;
 }
 
 // function to randomize array
-void ARRAY_Randomize(int *array, int size) {
+void ARRAY_Randomize(int *array) {
   UTIL_InitRand(); // applying a seed to random numbers
 
-  for(int i = 0; i < size; i++)
+  for(int i = 0; i < arraySize; i++)
     array[i] = UTIL_Rand(1, 20); // generating a random number for each item in the array
 }
 
@@ -27,8 +30,8 @@ void ARRAY_SortNext(int *array, int size) {
 }
 
 // function to sort array
-void ARRAY_Sort(int *array, int size) {
-  for(int i = size; i > 0 ; i--) {
+void ARRAY_Sort(int *array) {
+  for(int i = arraySize; i > 0 ; i--) {
     ARRAY_SortNext(array, i);
   }
 }

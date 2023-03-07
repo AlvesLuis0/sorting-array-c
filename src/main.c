@@ -1,32 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <windows.h>
 
 #include "include/array.h"
 #include "include/render.h"
 
-#define SIZE 15
+#define ARRAY_SIZE 15
+#define ARRAY_MAX_VALUE 20
 
-void SortArray(int *array, int size);
+void SortArray(int *array);
 
 int main(int argc, char **argv) {
-  int size = SIZE;
+  int *array = ARRAY_New(ARRAY_SIZE, ARRAY_MAX_VALUE); // declaring array
 
-  // if have an argument, convert the argument to int and set size
-  if(argc == 2)
-    size = atoi(argv[1]);
-
-  int *array = ARRAY_New(size); // declaring array
-
-  ARRAY_Randomize(array, size); // randomizing array
-  RENDER_ShowArray(array, size); // render a graph based on the array
-  RENDER_PrintArray(array, size); // prints values in the array
+  ARRAY_Randomize(array); // randomizing array
+  RENDER_ShowArray(array); // render a graph based on the array
+  RENDER_PrintArray(array); // prints values in the array
 
   getchar();
 
-  SortArray(array, size); // sorting array
-  RENDER_ShowArray(array, size); // rendering array sorted
-  RENDER_PrintArray(array, size); // printing array sorted
+  SortArray(array); // sorting array
+  RENDER_ShowArray(array); // rendering array sorted
+  RENDER_PrintArray(array); // printing array sorted
 
   ARRAY_Free(array); // freeing memory
 
@@ -34,11 +28,13 @@ int main(int argc, char **argv) {
 }
 
 // function to sort array
-void SortArray(int *array, int size) {
-  for(int i = size; i > 0 ; i--) {
-    Sleep(10000 / size); // waiting some seconds to pass to next frame
+void SortArray(int *array) {
+  int timeToWait = 5000 / ARRAY_SIZE;
+
+  for(int i = ARRAY_SIZE; i > 0 ; i--) {
+    Sleep(timeToWait); // waiting some seconds to pass to next frame
     ARRAY_SortNext(array, i); // sort array only 1 step
-    RENDER_ShowArray(array, size);
-    RENDER_PrintArray(array, size);
+    RENDER_ShowArray(array);
+    RENDER_PrintArray(array);
   }
 }
