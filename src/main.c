@@ -4,8 +4,8 @@
 #include "include/array.h"
 #include "include/render.h"
 
-#define ARRAY_SIZE 15
-#define ARRAY_MAX_VALUE 20
+#define ARRAY_SIZE 100
+#define ARRAY_MAX_VALUE 50
 
 void SortArray(int *array);
 
@@ -14,13 +14,13 @@ int main(int argc, char **argv) {
 
   ARRAY_Randomize(array); // randomizing array
   RENDER_ShowArray(array); // render a graph based on the array
-  RENDER_PrintArray(array); // prints values in the array
+  //RENDER_PrintArray(array); // prints values in the array
 
   getchar();
 
   SortArray(array); // sorting array
   RENDER_ShowArray(array); // rendering array sorted
-  RENDER_PrintArray(array); // printing array sorted
+  //RENDER_PrintArray(array); // printing array sorted
 
   ARRAY_Free(array); // freeing memory
 
@@ -35,6 +35,6 @@ void SortArray(int *array) {
     Sleep(timeToWait); // waiting some seconds to pass to next frame
     ARRAY_SortNext(array, i); // sort array only 1 step
     RENDER_ShowArray(array);
-    RENDER_PrintArray(array);
+    //RENDER_PrintArray(array);
   }
 }

@@ -4,5 +4,6 @@
 void UTIL_Swap(int *n1, int *n2);
 void UTIL_InitRand();
 int UTIL_Rand(int min, int max);
+void UTIL_MoveCursorTo(int x, int y);
 
 #endif
